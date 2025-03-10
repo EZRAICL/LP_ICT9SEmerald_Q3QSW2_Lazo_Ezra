@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightcoral;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: lightpink;
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+            border-radius: 10px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .pink { background: pink; color: white; }
+        .yellow { background: yellow; color: black; }
+        .blue { background: blue; color: white; }
+        .red { background: red; color: white; }
+    </style>
+
+<body>
+
+
+
+	  <div class="container">
+        <h2>Hi, This is the Math <span style="color: darkred;">Helper</span>. Use this as your calculator!</h2>
+        <p>Given:</p>
+        <label>Enter a value for a:</label>
+        <input type="number" id="a" placeholder="Enter a number">
+        <br>
+        <label>Enter a value for b:</label>
+        <input type="number" id="b" placeholder="Enter a number">
+        <br>
+        <button class="green" onclick="multiply()">Product of a and b</button>
+        <button class="yellow" onclick="power()">a raise to b</button>
+        <button class="red" onclick="remainder()">Get the remainder</button>
+        <button class="blue" onclick="checkEquality()">Check if a is equal to b</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function multiply() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerText = `Product: ${a * b}`;
+        }
+
+ function power() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerText = `a raised to b: ${Math.pow(a, b)}`;
+        }
+
+        function remainder() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerText = `Remainder: ${a % b}`;
+        }
+
+        function checkEquality() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let isEqual = a === b ? "Yes, they are equal." : "No, they are not equal.";
+            document.getElementById("result").innerText = isEqual;
+        }
+    </script>
+
+</body>
+
+</html>
